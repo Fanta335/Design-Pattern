@@ -1,0 +1,32 @@
+@startuml Factory method
+skinparam classAttributeIconSize 0
+
+class Factory{
+  +main(): void
+}
+class BookFactory{
+  +getBook(): Book
+}
+interface Book{
+  +print(): void
+}
+class PictureBook{
+  +print():void
+}
+class Comic{
+  +print():void
+}
+class Novel{
+  +print():void
+}
+
+Factory-->BookFactory
+BookFactory-->PictureBook:creates
+BookFactory-->Comic
+BookFactory-->Novel
+
+Book<|..PictureBook
+Book<|..Comic:implements
+Book<|..Novel
+
+@enduml
