@@ -10,6 +10,7 @@ class BookFactory{
 interface Book{
   +print(): void
 }
+
 class PictureBook{
   +print():void
 }
@@ -24,6 +25,7 @@ Factory-->BookFactory
 BookFactory-->PictureBook:creates
 BookFactory-->Comic
 BookFactory-->Novel
+
 
 Book<|..PictureBook
 Book<|..Comic:implements
